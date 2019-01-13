@@ -1,0 +1,72 @@
+import landerFuncs
+
+
+
+
+def main():
+   i = 1
+   elapsedtime = 0
+   velocity = 0.00
+   fuelRate = 0
+   acceleration = -1.62
+        
+   print()
+   #display the welcome message
+   landerFuncs.showWelcome()
+   print()
+   #get the altitude and fuel amount from user
+   altitude = landerFuncs.getAltitude()
+   fuel = landerFuncs.getFuel()
+   print()
+   #disply LM state
+   landerFuncs.displayLMState(elapsedtime, altitude, velocity, fuel, fuelRate)
+   print()
+   while altitude > 0:
+      
+      fuelRate = landerFuncs.getFuelRate(fuel)
+      altitude = landerFuncs.updateAltitude(altitude, velocity, acceleration)
+
+      acceleration = landerFuncs.updateAcceleration(1.62, fuelRate)
+      velocity = landerFuncs.updateVelocity(0, acceleration)
+
+      elapsedtime+= 1
+      velocity = velocity*elapsedtime
+     
+      fuel = landerFuncs.updateFuel(fuel, fuelRate)
+      
+      while(fuel <= 0):
+         fuelRate = 0
+         altitude = landerFuncs.updateAltitude(altitude, velocity, acceleration)
+
+         acceleration = landerFuncs.updateAcceleration(1.62, fuelRate)
+         velocity = landerFuncs.updateVelocity(0, acceleration)
+
+         elapsedtime = elapsedtime+1
+
+         velocity = velocity*elapsedtime
+        
+         
+         
+         
+         if(altitude <= 0):
+            break
+            landerFuncs.displayLMLandingStatus(velocity)
+
+         print("OUT OF FUEL - Elapsed Time: ", elapsedtime, "Altitude: %0.3f" % altitude, "Velocity: %0.3f"% velocity)
+         
+         #elapsetime+=1
+         
+
+    
+      print()
+      landerFuncs.displayLMState(elapsedtime, altitude, velocity, fuel, fuelRate)
+      print()
+      if(altitude <= 0):
+         landerFuncs.displayLMLandingStatus(velocity)
+      elif(fuel <= 0):
+         landerFuncs.displayLMLandingStatus(velocity)
+
+
+if __name__ == "__main__":
+    main()
+

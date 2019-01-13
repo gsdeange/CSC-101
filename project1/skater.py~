@@ -1,0 +1,29 @@
+# Project 1
+#
+#Name: Garrett DeAngelis
+# Intstructor: P. Hatalsky
+# Section: 12
+
+import funcs_tests
+import funcs
+
+def main():
+   print("Testing funcs_tests....")
+   weight = input("How much do you weigh in pounds? : ")
+   distance = input("How far away is your professor in feet? : ")
+   item = input("What item will you throw? Select one of the following: a (t)omato, a banana cream (p)ie, a (r)ock, a (l)ightsaber, or a lawn (g)nome? ")
+
+   funcs.poundsToKG(weight)
+   funcs.getMassObject(item)
+   funcs.getVelocityObject(distance)
+
+   #put it through the inputs
+   print("Nice throw!", )
+   
+
+   
+
+
+if __name__== '__main__':
+   main()
+      

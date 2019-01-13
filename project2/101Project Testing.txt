@@ -1,0 +1,9 @@
+Instructions for comparing your Project outputs to other outputs: 
+	
+python3 SkaterBad.py <in1> my output
+
+TO CHECK: 
+
+#this will check the difference between your file output (instOut1)  and the instructor output.
+# you want diff to give you an output of no differences
+diff instOut1 myOut1
