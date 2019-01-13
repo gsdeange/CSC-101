@@ -1,0 +1,5 @@
+4.5 -157.822 55.289 1488211648 122km SSE of Chignik Lake, Alaska
+2.8 -98.161 37.287 1488184600 12km W of Harper, Kansas
+2.19 -121.580 36.958 1488173538 5km S of Gilroy, California
+2.06 -155.280 19.383 1488221759 6km SW of Volcano, Hawaii
+1.05 -117.008 34.204 1488185465 9km E of Running Springs, CA
